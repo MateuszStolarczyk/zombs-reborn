@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="94" height="30" viewBox="0 0 126 40">
+  <defs>
+    </defs>
+  <circle cx="11.72" cy="11.09" r="9.5" transform="matrix(0.060352, -0.998177, 0.998177, 0.060352, 32.509786, 27.160005)" stroke="#333" stroke-miterlimit="10" stroke-width="8" fill="#598155" />
+  <circle cx="48.14" cy="10.99" r="9.5" transform="matrix(0.060352, -0.998178, 0.998177, 0.060352, 66.839798, 63.420021)" stroke="#333" stroke-miterlimit="10" stroke-width="8" fill="#598155" />
+</svg>
