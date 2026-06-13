@@ -14,14 +14,18 @@ config/name="Zombs Reborn"
 config/version="1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0, 0.43547937, 0.5536974, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://d240ekyig5esp"
 config/icon="uid://dat1jbjv0yf80"
 config/windows_native_icon="res://assets/favicon.ico"
+boot_splash/minimum_display_time=5000
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 window/stretch/aspect="expand"
 
 [input]
