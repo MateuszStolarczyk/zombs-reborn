@@ -1,8 +1,8 @@
+Panel
 MarginContainer
 HBoxContainer
 Label
 VBoxContainer
-Panel
 ColorRect
 TextureRect
 Control

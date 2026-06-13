@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://bsx6eflbkga4l" path="res://scenes/scroll.gdshader" id="1_in72f"]
 [ext_resource type="Texture2D" uid="uid://didsy7pdqyhdf" path="res://assets/ui-time-bar.png" id="2_dlxs6"]
 [ext_resource type="Texture2D" uid="uid://b4kb3qdy1dxdo" path="res://assets/UI/TimeCenter.png" id="3_dlxs6"]
+[ext_resource type="FontFile" uid="uid://d0ufpfoas37qw" path="res://assets/UI/font/SalmaproMediumNarrow.otf" id="4_ae8an"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in72f"]
 
@@ -39,6 +40,21 @@ expand_margin_bottom = 8.0
 texture = ExtResource("3_dlxs6")
 modulate_color = Color(1, 1, 1, 0.74509805)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0sg8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcn2e"]
+bg_color = Color(0.39215687, 0.6313726, 0.039215688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxnir"]
+bg_color = Color(0, 0, 0, 0.36862746)
+border_color = Color(0, 0, 0, 0.36862746)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sefq"]
+bg_color = Color(0, 0, 0, 0.36862746)
+border_color = Color(0, 0, 0, 0.36862746)
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0sg8"]
 bg_color = Color(0, 0, 0, 0.36862746)
 border_width_left = 8
@@ -70,10 +86,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = -315.0
-offset_right = 241.0
-offset_bottom = -285.0
+offset_left = 40.0
+offset_top = -312.0
+offset_right = 240.0
+offset_bottom = -280.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_in72f")
 
@@ -122,14 +138,310 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ae8an")
 
+[node name="Health" type="Panel" parent="." unique_id=54009461]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -72.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t0sg8")
+
+[node name="Round" type="Panel" parent="Health" unique_id=252618741]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlxs6")
+
+[node name="HealthDisplay" type="Panel" parent="Health/Round" unique_id=658444127]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qcn2e")
+
+[node name="MarginContainer" type="MarginContainer" parent="Health/Round" unique_id=1661177569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="Health/Round/MarginContainer" unique_id=1845443422]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "HEALTH"
+vertical_alignment = 1
+
+[node name="Outline" type="Panel" parent="Health" unique_id=356467860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ae8an")
+
+[node name="Stats" type="Panel" parent="." unique_id=673365172]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -232.0
+offset_right = -32.0
+offset_bottom = -104.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t0sg8")
+
+[node name="Round" type="Panel" parent="Stats" unique_id=237706890]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlxs6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats/Round" unique_id=1825837747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+
+[node name="FirstRow" type="HBoxContainer" parent="Stats/Round/VBoxContainer" unique_id=470388240]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="Wood" type="Panel" parent="Stats/Round/VBoxContainer/FirstRow" unique_id=631307563]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxnir")
+
+[node name="Margin" type="MarginContainer" parent="Stats/Round/VBoxContainer/FirstRow/Wood" unique_id=1354665914]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Stats/Round/VBoxContainer/FirstRow/Wood/Margin" unique_id=723914553]
+layout_mode = 2
+
+[node name="DWood" type="Label" parent="Stats/Round/VBoxContainer/FirstRow/Wood/Margin/HBox" unique_id=534984657]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "WOOD"
+vertical_alignment = 1
+
+[node name="AWood" type="Label" parent="Stats/Round/VBoxContainer/FirstRow/Wood/Margin/HBox" unique_id=331837168]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Stone" type="Panel" parent="Stats/Round/VBoxContainer/FirstRow" unique_id=1922000879]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7sefq")
+
+[node name="Margin" type="MarginContainer" parent="Stats/Round/VBoxContainer/FirstRow/Stone" unique_id=1230755193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Stats/Round/VBoxContainer/FirstRow/Stone/Margin" unique_id=830553991]
+layout_mode = 2
+
+[node name="DStone" type="Label" parent="Stats/Round/VBoxContainer/FirstRow/Stone/Margin/HBox" unique_id=718942170]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "STONE"
+vertical_alignment = 1
+
+[node name="AStone" type="Label" parent="Stats/Round/VBoxContainer/FirstRow/Stone/Margin/HBox" unique_id=1983081184]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="SecRow" type="HBoxContainer" parent="Stats/Round/VBoxContainer" unique_id=1330258656]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 1
+
+[node name="Gold" type="Panel" parent="Stats/Round/VBoxContainer/SecRow" unique_id=521235948]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7sefq")
+
+[node name="Margin" type="MarginContainer" parent="Stats/Round/VBoxContainer/SecRow/Gold" unique_id=1580341027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Stats/Round/VBoxContainer/SecRow/Gold/Margin" unique_id=134119826]
+layout_mode = 2
+
+[node name="DGold" type="Label" parent="Stats/Round/VBoxContainer/SecRow/Gold/Margin/HBox" unique_id=1362012023]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "GOLD"
+vertical_alignment = 1
+
+[node name="AGold" type="Label" parent="Stats/Round/VBoxContainer/SecRow/Gold/Margin/HBox" unique_id=1652507320]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Tokens" type="Panel" parent="Stats/Round/VBoxContainer/SecRow" unique_id=1536549433]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7sefq")
+
+[node name="Margin" type="MarginContainer" parent="Stats/Round/VBoxContainer/SecRow/Tokens" unique_id=1071138829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Stats/Round/VBoxContainer/SecRow/Tokens/Margin" unique_id=4296420]
+layout_mode = 2
+
+[node name="DTokens" type="Label" parent="Stats/Round/VBoxContainer/SecRow/Tokens/Margin/HBox" unique_id=615894269]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "TOKENS"
+vertical_alignment = 1
+
+[node name="ATokens" type="Label" parent="Stats/Round/VBoxContainer/SecRow/Tokens/Margin/HBox" unique_id=1764957363]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
+[node name="Wave" type="Panel" parent="Stats/Round/VBoxContainer" unique_id=1453436306]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7sefq")
+
+[node name="Margin" type="MarginContainer" parent="Stats/Round/VBoxContainer/Wave" unique_id=835081411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="Stats/Round/VBoxContainer/Wave/Margin" unique_id=338255521]
+layout_mode = 2
+
+[node name="DWave" type="Label" parent="Stats/Round/VBoxContainer/Wave/Margin/HBox" unique_id=1973352826]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "WAVE"
+vertical_alignment = 1
+
+[node name="AWave" type="Label" parent="Stats/Round/VBoxContainer/Wave/Margin/HBox" unique_id=1297756388]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ae8an")
+theme_override_font_sizes/font_size = 20
+text = "0"
+vertical_alignment = 1
+
 [node name="Minimap" type="Panel" parent="." unique_id=154618760]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 41.0
-offset_top = -250.0
-offset_right = 241.0
-offset_bottom = -50.0
+offset_left = 40.0
+offset_top = -240.0
+offset_right = 240.0
+offset_bottom = -40.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_t0sg8")
