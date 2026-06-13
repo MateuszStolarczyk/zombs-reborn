@@ -1,5 +1,6 @@
-Panel
 MarginContainer
+Label
+Panel
 ColorRect
 TextureRect
 Control
@@ -11,4 +12,3 @@ CollisionShape2D
 AnimationPlayer
 CanvasModulate
 Node2D
-Camera2D
