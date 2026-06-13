@@ -1,5 +1,5 @@
-MarginContainer
 Panel
+MarginContainer
 ColorRect
 TextureRect
 Control
@@ -12,4 +12,3 @@ AnimationPlayer
 CanvasModulate
 Node2D
 Camera2D
-Sprite2D
