@@ -3,9 +3,47 @@
 [ext_resource type="Shader" uid="uid://bsx6eflbkga4l" path="res://scenes/scroll.gdshader" id="1_in72f"]
 [ext_resource type="Texture2D" uid="uid://didsy7pdqyhdf" path="res://assets/ui-time-bar.png" id="2_dlxs6"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_in72f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlxs6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_muem4"]
 shader = ExtResource("1_in72f")
 shader_parameter/progress = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ae8an"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 0.36862746)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0sg8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="HUD" type="Control" unique_id=107009146]
 layout_mode = 3
@@ -15,60 +53,59 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TimeCycleUI" type="TextureRect" parent="." unique_id=2032923510]
-texture_filter = 1
-material = SubResource("ShaderMaterial_muem4")
+[node name="Time" type="Panel" parent="." unique_id=204916113]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = -47.0
-offset_right = 262.0
-offset_bottom = -20.0
+offset_left = 41.0
+offset_top = -129.0
+offset_right = 332.0
+offset_bottom = -95.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_in72f")
+
+[node name="Round" type="Panel" parent="Time" unique_id=73688447]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlxs6")
+
+[node name="TimeCycleUI" type="TextureRect" parent="Time/Round" unique_id=2032923510]
+texture_filter = 1
+material = SubResource("ShaderMaterial_muem4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_dlxs6")
 
-[node name="ColorRect" type="ColorRect" parent="TimeCycleUI" unique_id=454805810]
+[node name="Outline" type="Panel" parent="Time" unique_id=1310340464]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.25
-offset_top = -14.5
-offset_right = 5.25
-offset_bottom = 14.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0.54901963)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ae8an")
 
-[node name="ColorRect" type="ColorRect" parent="TimeCycleUI/ColorRect" unique_id=482082511]
+[node name="Center" type="Panel" parent="Time" unique_id=1308947856]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.875
-offset_top = -14.5
-offset_right = 0.875
-offset_bottom = 14.5
+offset_left = -3.25
+offset_top = -24.0
+offset_right = 3.25
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect2" type="ColorRect" parent="TimeCycleUI" unique_id=1957054600]
-z_index = -1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -119.5
-offset_top = -15.75
-offset_right = 119.5
-offset_bottom = 15.75
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t0sg8")

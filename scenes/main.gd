@@ -4,7 +4,9 @@ extends Node2D
 @onready var anim_night: AnimationPlayer = $Player/Camera2D/Night/anim_night
 
 # NOWE: Referencja do paska UI w CanvasLayer lokalnego gracza
-@onready var time_ui: TextureRect = $Player/CanvasLayer/HUD/TimeCycleUI
+@onready var time_ui: TextureRect = $Player/CanvasLayer/HUD/Time/Round/TimeCycleUI
+
+@export var day_time = 30.0
 
 var is_night: bool = false 
 var game_timer: Timer # WYZNAKOWANE: Przeniesione tutaj, aby _process widział licznik
@@ -17,7 +19,7 @@ func _ready() -> void:
 	game_timer = Timer.new()
 	add_child(game_timer)
 	
-	game_timer.wait_time = 30.0
+	game_timer.wait_time = day_time
 	game_timer.one_shot = false
 	game_timer.timeout.connect(_on_time_changed)
 	game_timer.start()

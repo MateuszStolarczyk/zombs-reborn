@@ -1,6 +1,4 @@
-res://scenes/main.tscn
-res://scenes/props_generarion.gd
-res://scenes/main.gd
-res://scenes/player.gd
-res://scenes/scroll.gdshader
 res://scenes/Player/HUD.tscn
+res://scenes/scroll.gdshader
+res://scenes/main.gd
+res://scenes/main.tscn

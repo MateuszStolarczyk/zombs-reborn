@@ -144,6 +144,7 @@ size = Vector2(100, 100)
 
 [node name="Main" type="Node2D" unique_id=1715048030]
 script = ExtResource("1_tipki")
+day_time = 60.0
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=46925627]
 scale = Vector2(0.45, 0.45)
