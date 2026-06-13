@@ -3,15 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c2pnrcntrgcwf" path="res://assets/map-grass.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://caluytmdre6pv" path="res://scenes/main.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://b5klrb5a1nok2" path="res://scenes/player.gd" id="2_jyhfs"]
-[ext_resource type="Script" uid="uid://l1wib3knjdn4" path="res://scenes/map_generation.gd" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://d3mhgdak80fof" path="res://assets/png/map-stone.png" id="3_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://cpafjne0dkipt" path="res://assets/svg/player-pickaxe-t1.svg" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://d4h742u8yl1wi" path="res://assets/svg/player-base.svg" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cynhyru83c6x6" path="res://assets/png/map-tree.png" id="4_trceg"]
 [ext_resource type="Texture2D" uid="uid://cdmfbq21c1xk3" path="res://assets/png/pet-ghost-t1-base.png" id="6_85g3d"]
 [ext_resource type="Script" uid="uid://baeg4872wgqu3" path="res://scenes/props_generarion.gd" id="6_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://d33kx523otmv0" path="res://assets/svg/map-tree.svg" id="7_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://cix8vwaau7eqq" path="res://assets/png/inventory-pet-ghost-t1.png" id="7_choun"]
+[ext_resource type="Texture2D" uid="uid://tuluwujto4e1" path="res://assets/svg/map-stone.svg" id="8_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://b7xj5vtfanldk" path="res://assets/png/pet-ghost-projectile.png" id="8_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://2djdtddapeif" path="res://scenes/Player/HUD.tscn" id="11_a8y0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
 texture = ExtResource("1_o5qli")
@@ -143,15 +145,13 @@ size = Vector2(100, 100)
 [node name="Main" type="Node2D" unique_id=1715048030]
 script = ExtResource("1_tipki")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1212084247]
-scale = Vector2(0.45, 0.45)
-tile_set = SubResource("TileSet_ya4ey")
-script = ExtResource("3_85g3d")
-
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=46925627]
+[node name="Map" type="TileMapLayer" parent="." unique_id=46925627]
 scale = Vector2(0.45, 0.45)
 tile_set = SubResource("TileSet_ya4ey")
 script = ExtResource("6_a8y0u")
+tree_texture = ExtResource("7_a8y0u")
+stone_texture = ExtResource("8_jkv2x")
+max_offset = 0.4
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2130166193]
 script = ExtResource("2_jyhfs")
@@ -180,8 +180,12 @@ enabled = false
 [node name="Night" type="CanvasModulate" parent="Player/Camera2D" unique_id=1210512717]
 color = Color(0.45685214, 0.4568522, 0.4568522, 1)
 
-[node name="anim_nihgt" type="AnimationPlayer" parent="Player/Camera2D/Night" unique_id=456408636]
+[node name="anim_night" type="AnimationPlayer" parent="Player/Camera2D/Night" unique_id=456408636]
 libraries/ = SubResource("AnimationLibrary_a8y0u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1911703972]
+
+[node name="HUD" parent="Player/CanvasLayer" unique_id=107009146 instance=ExtResource("11_a8y0u")]
 
 [node name="PetGhostT1Base" type="Sprite2D" parent="." unique_id=1013113335]
 position = Vector2(235, 6)

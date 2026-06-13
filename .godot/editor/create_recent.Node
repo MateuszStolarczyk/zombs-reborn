@@ -1,3 +1,7 @@
+ColorRect
+TextureRect
+Control
+CanvasLayer
 TileMapLayer
 TileMap
 Area2D

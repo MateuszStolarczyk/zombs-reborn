@@ -15,6 +15,9 @@ func _ready() -> void:
 	else:
 		# Jeśli to kopia innego gracza z sieci, wyłączamy dla niego kamerę
 		camera.enabled = false 
+	# Jeśli ten gracz NIE jest sterowany przez nas (to inny gracz w sieci)
+	if not is_multiplayer_authority():
+		$CanvasLayer.hide() # Ukrywamy jego UI na naszym ekranie
 
 func _physics_process(delta: float) -> void:
 	# WARUNEK BEZPIECZEŃSTWA: 
