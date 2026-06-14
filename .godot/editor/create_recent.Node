@@ -1,9 +1,10 @@
-Panel
-MarginContainer
-Button
 VBoxContainer
-HBoxContainer
 Label
+MarginContainer
+PanelContainer
+Panel
+Button
+HBoxContainer
 ColorRect
 TextureRect
 Control
@@ -11,4 +12,3 @@ CanvasLayer
 TileMapLayer
 TileMap
 Area2D
-CollisionShape2D
