@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kb3qdy1dxdo" path="res://assets/UI/TimeCenter.png" id="3_dlxs6"]
 [ext_resource type="FontFile" uid="uid://d0ufpfoas37qw" path="res://assets/UI/font/SalmaproMediumNarrow.otf" id="4_ae8an"]
 [ext_resource type="Texture2D" uid="uid://bkbj727ckf321" path="res://assets/svg/icons-shop.svg" id="6_o5w4u"]
+[ext_resource type="Script" uid="uid://dmpbpom0oxfce" path="res://scenes/Player/HoverButtons.gd" id="6_oyxrp"]
 [ext_resource type="Texture2D" uid="uid://b1kd7vu8ndlia" path="res://assets/svg/icons-party.svg" id="7_oyxrp"]
 [ext_resource type="Texture2D" uid="uid://lwqqi2rv0hp1" path="res://assets/svg/icons-settings.svg" id="8_035wj"]
 [ext_resource type="Texture2D" uid="uid://ck1tauu47pers" path="res://assets/png/inventory-heal-towers-spell.png" id="9_kkfot"]
@@ -114,6 +115,8 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_035wj"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psswl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_syaje"]
@@ -126,15 +129,12 @@ bg_color = Color(0, 0, 0, 0.27450982)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vk8tp"]
 texture = ExtResource("6_o5w4u")
-modulate_color = Color(1, 1, 1, 0.39215687)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5n4y"]
 texture = ExtResource("7_oyxrp")
-modulate_color = Color(1, 1, 1, 0.39215687)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu4cq"]
 texture = ExtResource("8_035wj")
-modulate_color = Color(1, 1, 1, 0.39215687)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c68fp"]
 bg_color = Color(1, 1, 1, 1)
@@ -143,11 +143,9 @@ corner_radius_bottom_right = 3
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ae06i"]
 texture = ExtResource("9_kkfot")
-modulate_color = Color(1, 1, 1, 0.627451)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k6q4f"]
 texture = ExtResource("10_5v57q")
-modulate_color = Color(1, 1, 1, 0.627451)
 
 [node name="HUD" type="Control" unique_id=107009146]
 layout_mode = 3
@@ -579,7 +577,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t8gi")
 
-[node name="RButtons" type="Panel" parent="." unique_id=1805521970]
+[node name="Panel" type="Panel" parent="." unique_id=727471108 node_paths=PackedStringArray("buttons")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_035wj")
+script = ExtResource("6_oyxrp")
+buttons = [NodePath("RButtons/Round/VBoxContainer/Shop"), NodePath("RButtons/Round/VBoxContainer/Party"), NodePath("RButtons/Round/VBoxContainer/Settings"), NodePath("LButtons/Round/VBoxContainer/HealTowers"), NodePath("LButtons/Round/VBoxContainer/Timeout")]
+
+[node name="RButtons" type="Panel" parent="Panel" unique_id=1805521970]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -593,7 +602,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_psswl")
 
-[node name="Round" type="Panel" parent="RButtons" unique_id=336282693]
+[node name="Round" type="Panel" parent="Panel/RButtons" unique_id=336282693]
 clip_children = 1
 layout_mode = 1
 anchors_preset = 15
@@ -603,7 +612,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_syaje")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RButtons/Round" unique_id=958478416]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/RButtons/Round" unique_id=958478416]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -612,13 +621,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 1
 
-[node name="Shop" type="Button" parent="RButtons/Round/VBoxContainer" unique_id=2103365653]
+[node name="Shop" type="Button" parent="Panel/RButtons/Round/VBoxContainer" unique_id=2103365653]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vq0qw")
 
-[node name="Margin" type="MarginContainer" parent="RButtons/Round/VBoxContainer/Shop" unique_id=801480975]
+[node name="Margin" type="MarginContainer" parent="Panel/RButtons/Round/VBoxContainer/Shop" unique_id=801480975]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -631,18 +650,29 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="IMG" type="Panel" parent="RButtons/Round/VBoxContainer/Shop/Margin" unique_id=89039145]
+[node name="IMG" type="Panel" parent="Panel/RButtons/Round/VBoxContainer/Shop/Margin" unique_id=89039145]
+self_modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_vk8tp")
 
-[node name="Party" type="Button" parent="RButtons/Round/VBoxContainer" unique_id=345286517]
+[node name="Party" type="Button" parent="Panel/RButtons/Round/VBoxContainer" unique_id=345286517]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vq0qw")
 
-[node name="Margin" type="MarginContainer" parent="RButtons/Round/VBoxContainer/Party" unique_id=1131371174]
+[node name="Margin" type="MarginContainer" parent="Panel/RButtons/Round/VBoxContainer/Party" unique_id=1131371174]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -655,18 +685,29 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="IMG" type="Panel" parent="RButtons/Round/VBoxContainer/Party/Margin" unique_id=445168856]
+[node name="IMG" type="Panel" parent="Panel/RButtons/Round/VBoxContainer/Party/Margin" unique_id=445168856]
+self_modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_k5n4y")
 
-[node name="Settings" type="Button" parent="RButtons/Round/VBoxContainer" unique_id=951632041]
+[node name="Settings" type="Button" parent="Panel/RButtons/Round/VBoxContainer" unique_id=951632041]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vq0qw")
 
-[node name="Margin" type="MarginContainer" parent="RButtons/Round/VBoxContainer/Settings" unique_id=1850961618]
+[node name="Margin" type="MarginContainer" parent="Panel/RButtons/Round/VBoxContainer/Settings" unique_id=1850961618]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -679,12 +720,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="IMG" type="Panel" parent="RButtons/Round/VBoxContainer/Settings/Margin" unique_id=1462874819]
+[node name="IMG" type="Panel" parent="Panel/RButtons/Round/VBoxContainer/Settings/Margin" unique_id=1462874819]
+self_modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wu4cq")
 
-[node name="LButtons" type="Panel" parent="." unique_id=462343047]
+[node name="LButtons" type="Panel" parent="Panel" unique_id=462343047]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -695,7 +737,7 @@ offset_bottom = 56.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_psswl")
 
-[node name="Round" type="Panel" parent="LButtons" unique_id=1418255908]
+[node name="Round" type="Panel" parent="Panel/LButtons" unique_id=1418255908]
 clip_children = 1
 layout_mode = 1
 anchors_preset = 15
@@ -707,7 +749,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c68fp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LButtons/Round" unique_id=1042171702]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/LButtons/Round" unique_id=1042171702]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -716,13 +758,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 1
 
-[node name="Shop" type="Button" parent="LButtons/Round/VBoxContainer" unique_id=804501650]
+[node name="HealTowers" type="Button" parent="Panel/LButtons/Round/VBoxContainer" unique_id=804501650]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vq0qw")
 
-[node name="Margin" type="MarginContainer" parent="LButtons/Round/VBoxContainer/Shop" unique_id=412364264]
+[node name="Margin" type="MarginContainer" parent="Panel/LButtons/Round/VBoxContainer/HealTowers" unique_id=412364264]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -735,18 +787,29 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="IMG" type="Panel" parent="LButtons/Round/VBoxContainer/Shop/Margin" unique_id=511226475]
+[node name="IMG" type="Panel" parent="Panel/LButtons/Round/VBoxContainer/HealTowers/Margin" unique_id=511226475]
+self_modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ae06i")
 
-[node name="Party" type="Button" parent="LButtons/Round/VBoxContainer" unique_id=1600347986]
+[node name="Timeout" type="Button" parent="Panel/LButtons/Round/VBoxContainer" unique_id=1600347986]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_vq0qw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vq0qw")
 
-[node name="Margin" type="MarginContainer" parent="LButtons/Round/VBoxContainer/Party" unique_id=1879888517]
+[node name="Margin" type="MarginContainer" parent="Panel/LButtons/Round/VBoxContainer/Timeout" unique_id=1879888517]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -759,7 +822,8 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="IMG" type="Panel" parent="LButtons/Round/VBoxContainer/Party/Margin" unique_id=1402764103]
+[node name="IMG" type="Panel" parent="Panel/LButtons/Round/VBoxContainer/Timeout/Margin" unique_id=1402764103]
+self_modulate = Color(1, 1, 1, 0.627451)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_k6q4f")

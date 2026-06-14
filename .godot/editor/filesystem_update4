@@ -1,3 +1,4 @@
 res://scenes/Player/HUD.tscn
 res://scenes/scroll.gdshader
 res://scenes/main.tscn
+res://scenes/Player/HoverButtons.gd
