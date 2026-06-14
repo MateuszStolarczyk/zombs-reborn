@@ -147,7 +147,7 @@ script = ExtResource("1_tipki")
 day_time = 60.0
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=46925627]
-scale = Vector2(0.45, 0.45)
+scale = Vector2(0.2, 0.2)
 tile_set = SubResource("TileSet_ya4ey")
 script = ExtResource("6_a8y0u")
 tree_texture = ExtResource("7_a8y0u")
@@ -155,7 +155,9 @@ stone_texture = ExtResource("8_jkv2x")
 max_offset = 0.4
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=2130166193]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("2_jyhfs")
+speed = 200.0
 
 [node name="HandPivot" type="Node2D" parent="Player" unique_id=1891961540]
 
