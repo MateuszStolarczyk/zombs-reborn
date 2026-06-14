@@ -1,8 +1,8 @@
+MarginContainer
+Panel
 Button
 VBoxContainer
-Panel
 HBoxContainer
-MarginContainer
 Label
 ColorRect
 TextureRect
@@ -12,4 +12,3 @@ TileMapLayer
 TileMap
 Area2D
 CollisionShape2D
-AnimationPlayer
