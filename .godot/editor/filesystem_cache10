@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1781363561
+::res://::1781454110
 icon.svg::CompressedTexture2D::3506902456671944925::1780673177::1780673227::1::::<><><>0<>0<>fb399247b8b560b73843622dd49967df<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1781359422::0::1::::<><><>0<>0<><>::
 ::res://assets/::1781362399
@@ -903,9 +903,10 @@ zombie-yellow-t9-base.svg::CompressedTexture2D::4575838134653425790::1781019382:
 zombie-yellow-t9-weapon.svg::CompressedTexture2D::4533954356983891641::1781019382::1781021724::1::::<><><>0<>0<>e24e60e70c426522245832b34da734fd<>res://.godot/imported/zombie-yellow-t9-weapon.svg-193601f33d6c60e72b3b69bf511e2f2d.ctex::
 zombie-yellow-t10-base.svg::CompressedTexture2D::5802642024625448693::1781019381::1781021724::1::::<><><>0<>0<>abe1d87890fcc0b248c05df40d897a05<>res://.godot/imported/zombie-yellow-t10-base.svg-1140a6c0e60a4f962508d93dc166cafb.ctex::
 zombie-yellow-t10-weapon.svg::CompressedTexture2D::1075784582273405254::1781019381::1781021724::1::::<><><>0<>0<>32dcbb028b0690c000604e89c99f4a3c<>res://.godot/imported/zombie-yellow-t10-weapon.svg-5c261e65cd208ad9284bd3140c05cc0d.ctex::
-::res://assets/UI/::1781365307
+::res://assets/UI/::1781454352
+Preview.png::CompressedTexture2D::1180613781771082785::1781454352::1781454353::1::::<><><>0<>0<>0cdaeae0025aded26c309c4dc00a7aa7<>res://.godot/imported/Preview.png-d2847e0a9831e23f654e457168a168ba.ctex::
 TimeCenter.png::CompressedTexture2D::4442652492092096584::1781362419::1781362423::1::::<><><>0<>0<>47628150af6b1cd2593a858bc874f495<>res://.godot/imported/TimeCenter.png-4a70b7fd2ca4e5f20bd380d54f0adaa7.ctex::
-::res://assets/UI/font/::1781365317
+::res://assets/UI/font/::1781365318
 SalmaproMediumNarrow.otf::FontFile::8955601353252918710::1781365317::1781365318::1::::<><><>0<>0<>9cddd9ef91e3ea61b1d820ee8051ea72<>res://.godot/imported/SalmaproMediumNarrow.otf-8c20eda6cbbac3811ebbda83e639c89c.fontdata::
 ::res://scenes/::1781361335
 main.gd::GDScript::4796807738230429727::1781361334::0::1::::<>Node2D<><>0<>0<><>::
@@ -913,6 +914,6 @@ main.tscn::PackedScene::895179526743177308::1781361335::0::1::::<><><>0<>0<><>::
 player.gd::GDScript::4513428114694239535::1781279895::0::1::::<>CharacterBody2D<><>0<>0<><>::
 props_generarion.gd::GDScript::2395096068649887860::1781279486::0::1::::<>TileMapLayer<><>0<>0<><>::
 scroll.gdshader::Shader::3699190207141073685::1781361230::0::1::::<><><>0<>0<><>::
-::res://scenes/Player/::1781363379
-HUD.tscn::PackedScene::1901844724520633277::1781363379::0::1::::<><><>0<>0<><>::uid://bsx6eflbkga4l::::res://scenes/scroll.gdshader<>uid://didsy7pdqyhdf::::res://assets/ui-time-bar.png<>uid://b4kb3qdy1dxdo::::res://assets/UI/TimeCenter.png
+::res://scenes/Player/::1781367536
+HUD.tscn::PackedScene::1901844724520633277::1781367536::0::1::::<><><>0<>0<><>::uid://bsx6eflbkga4l::::res://scenes/scroll.gdshader<>uid://didsy7pdqyhdf::::res://assets/ui-time-bar.png<>uid://b4kb3qdy1dxdo::::res://assets/UI/TimeCenter.png<>uid://d0ufpfoas37qw::::res://assets/UI/font/SalmaproMediumNarrow.otf
 ::res://scripts/::1780678214
