@@ -1,13 +1,13 @@
+Control
+Panel
 VBoxContainer
 Label
 MarginContainer
 PanelContainer
-Panel
 Button
 HBoxContainer
 ColorRect
 TextureRect
-Control
 CanvasLayer
 TileMapLayer
 TileMap
