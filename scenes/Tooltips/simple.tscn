@@ -36,6 +36,8 @@ text = "Shop (B)"
 
 [node name="ArrowAnchor" type="Control" parent="." unique_id=2016403043]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
 
 [node name="Arrow" type="Panel" parent="ArrowAnchor" unique_id=1541020069]
 layout_mode = 1
