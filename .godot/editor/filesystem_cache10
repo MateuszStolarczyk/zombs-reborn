@@ -1,7 +1,7 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1781541762
+::res://::1781543767
 icon.svg::CompressedTexture2D::3506902456671944925::1780673177::1780673227::1::::<><><>0<>0<>fb399247b8b560b73843622dd49967df<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1781359422::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1781543767::0::1::::<><><>0<>0<><>::
 ::res://assets/::1781362399
 entities-arrow-tower.svg::CompressedTexture2D::8391966981104671712::1780989708::1781021724::1::::<><><>0<>0<>05ac199ad137b131c93dbf1a72cf5d73<>res://.godot/imported/entities-arrow-tower.svg-e4761c8e0f10acee14cb4c726d843469.ctex::
 entities-bomb-tower.svg::CompressedTexture2D::1817667161923605322::1780989708::1781021725::1::::<><><>0<>0<>1483f129200f36b767be131dbb71def7<>res://.godot/imported/entities-bomb-tower.svg-31563cdeebbbab5f42fb12f0be812f3f.ctex::
@@ -903,9 +903,10 @@ zombie-yellow-t9-base.svg::CompressedTexture2D::4575838134653425790::1781019382:
 zombie-yellow-t9-weapon.svg::CompressedTexture2D::4533954356983891641::1781019382::1781021724::1::::<><><>0<>0<>e24e60e70c426522245832b34da734fd<>res://.godot/imported/zombie-yellow-t9-weapon.svg-193601f33d6c60e72b3b69bf511e2f2d.ctex::
 zombie-yellow-t10-base.svg::CompressedTexture2D::5802642024625448693::1781019381::1781021724::1::::<><><>0<>0<>abe1d87890fcc0b248c05df40d897a05<>res://.godot/imported/zombie-yellow-t10-base.svg-1140a6c0e60a4f962508d93dc166cafb.ctex::
 zombie-yellow-t10-weapon.svg::CompressedTexture2D::1075784582273405254::1781019381::1781021724::1::::<><><>0<>0<>32dcbb028b0690c000604e89c99f4a3c<>res://.godot/imported/zombie-yellow-t10-weapon.svg-5c261e65cd208ad9284bd3140c05cc0d.ctex::
-::res://assets/UI/::1781454353
+::res://assets/UI/::1781543754
 Preview.png::CompressedTexture2D::1180613781771082785::1781454352::1781454353::1::::<><><>0<>0<>0cdaeae0025aded26c309c4dc00a7aa7<>res://.godot/imported/Preview.png-d2847e0a9831e23f654e457168a168ba.ctex::
 TimeCenter.png::CompressedTexture2D::4442652492092096584::1781362419::1781362423::1::::<><><>0<>0<>47628150af6b1cd2593a858bc874f495<>res://.godot/imported/TimeCenter.png-4a70b7fd2ca4e5f20bd380d54f0adaa7.ctex::
+TooltipArrow.png::CompressedTexture2D::2838376528513891491::1781543754::1781543785::1::::<><><>0<>0<>0fcf5d3db5535b150d114a47f3de2e4c<>res://.godot/imported/TooltipArrow.png-2fc69dffe4249a2fe62aea080a6b00d9.ctex::
 ::res://assets/UI/font/::1781365318
 SalmaproMediumNarrow.otf::FontFile::8955601353252918710::1781365317::1781365318::1::::<><><>0<>0<>9cddd9ef91e3ea61b1d820ee8051ea72<>res://.godot/imported/SalmaproMediumNarrow.otf-8c20eda6cbbac3811ebbda83e639c89c.fontdata::
 ::res://scenes/::1781541762
@@ -914,9 +915,10 @@ main.tscn::PackedScene::895179526743177308::1781458962::0::1::::<><><>0<>0<><>::
 player.gd::GDScript::4513428114694239535::1781279895::0::1::::<>CharacterBody2D<><>0<>0<><>::
 props_generarion.gd::GDScript::2395096068649887860::1781279486::0::1::::<>TileMapLayer<><>0<>0<><>::
 scroll.gdshader::Shader::3699190207141073685::1781540815::0::1::::<><><>0<>0<><>::
-::res://scenes/Player/::1781541762
-HoverButtons.gd::GDScript::8032582099967987476::1781541761::0::1::::<>Node<><>0<>0<><>::
-HUD.tscn::PackedScene::1901844724520633277::1781541771::0::1::::<><><>0<>0<><>::uid://bsx6eflbkga4l::::res://scenes/scroll.gdshader<>uid://q25sigo3nopd::::res://assets/UI/Preview.png<>uid://didsy7pdqyhdf::::res://assets/ui-time-bar.png<>uid://b4kb3qdy1dxdo::::res://assets/UI/TimeCenter.png<>uid://d0ufpfoas37qw::::res://assets/UI/font/SalmaproMediumNarrow.otf<>uid://bkbj727ckf321::::res://assets/svg/icons-shop.svg<>uid://dmpbpom0oxfce::::res://scenes/Player/HoverButtons.gd<>uid://b1kd7vu8ndlia::::res://assets/svg/icons-party.svg<>uid://lwqqi2rv0hp1::::res://assets/svg/icons-settings.svg<>uid://ck1tauu47pers::::res://assets/png/inventory-heal-towers-spell.png<>uid://b5dr2jb4hdoo3::::res://assets/png/inventory-timeout.png<>uid://bsfl44hf41orb::::res://scenes/Tooltips/tooltip.tscn
-::res://scenes/Tooltips/::1781541762
-tooltip.tscn::PackedScene::3660862967149410555::1781460040::0::1::::<><><>0<>0<><>::
+::res://scenes/Player/::1781543464
+HoverButtons.gd::GDScript::8032582099967987476::1781543464::0::1::::<>Node<><>0<>0<><>::
+HUD.tscn::PackedScene::1901844724520633277::1781543178::0::1::::<><><>0<>0<><>::uid://bsx6eflbkga4l::::res://scenes/scroll.gdshader<>uid://q25sigo3nopd::::res://assets/UI/Preview.png<>uid://didsy7pdqyhdf::::res://assets/ui-time-bar.png<>uid://b4kb3qdy1dxdo::::res://assets/UI/TimeCenter.png<>uid://d0ufpfoas37qw::::res://assets/UI/font/SalmaproMediumNarrow.otf<>uid://bkbj727ckf321::::res://assets/svg/icons-shop.svg<>uid://dmpbpom0oxfce::::res://scenes/Player/HoverButtons.gd<>uid://b1kd7vu8ndlia::::res://assets/svg/icons-party.svg<>uid://lwqqi2rv0hp1::::res://assets/svg/icons-settings.svg<>uid://ck1tauu47pers::::res://assets/png/inventory-heal-towers-spell.png<>uid://b5dr2jb4hdoo3::::res://assets/png/inventory-timeout.png<>uid://bsfl44hf41orb::::res://scenes/Tooltips/simple.tscn<>uid://cpoemx0wli0xj::::res://scenes/Tooltips/advanced.tscn
+::res://scenes/Tooltips/::1781543169
+advanced.tscn::PackedScene::5854840855683236203::1781543169::0::1::::<><><>0<>0<><>::
+simple.tscn::PackedScene::3660862967149410555::1781541774::0::1::::<><><>0<>0<><>::
 ::res://scripts/::1780678214
