@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cpoemx0wli0xj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvr4a"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dicn"]
+expand_margin_left = 985.0
+
+[node name="Advanced" type="PanelContainer" unique_id=1447388443]
+offset_right = 250.0
+offset_bottom = 76.0
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_pvr4a")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=215074776]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer" unique_id=85699161]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/VBox" unique_id=1868282675]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
+text = "Timeout"
+
+[node name="Type" type="Label" parent="MarginContainer/VBox" unique_id=532263255]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6666667, 0.68235296, 0.65882355, 1)
+theme_override_colors/font_outline_color = Color(0.6509804, 0.6666667, 0.6392157, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 9
+text = "Untlity"
+
+[node name="Desc" type="Label" parent="MarginContainer/VBox" unique_id=1817690782]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
+text = "Prevent zombies from spawning for one day-night cycle."
+
+[node name="Cost" type="Label" parent="MarginContainer/VBox" unique_id=1123850944]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6862745, 0.29803923, 0.21960784, 1)
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
+text = "10 000 gold"

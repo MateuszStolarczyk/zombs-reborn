@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://lwqqi2rv0hp1" path="res://assets/svg/icons-settings.svg" id="8_035wj"]
 [ext_resource type="Texture2D" uid="uid://ck1tauu47pers" path="res://assets/png/inventory-heal-towers-spell.png" id="9_kkfot"]
 [ext_resource type="Texture2D" uid="uid://b5dr2jb4hdoo3" path="res://assets/png/inventory-timeout.png" id="10_5v57q"]
-[ext_resource type="PackedScene" uid="uid://bsfl44hf41orb" path="res://scenes/tooltip.tscn" id="12_035wj"]
+[ext_resource type="PackedScene" uid="uid://bsfl44hf41orb" path="res://scenes/Tooltips/simple.tscn" id="12_035wj"]
+[ext_resource type="PackedScene" uid="uid://cpoemx0wli0xj" path="res://scenes/Tooltips/advanced.tscn" id="13_kkfot"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qcn2e"]
 texture = ExtResource("1_t0sg8")
@@ -578,7 +579,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_2t8gi")
 
-[node name="Buttons" type="Panel" parent="." unique_id=727471108 node_paths=PackedStringArray("buttons", "tooltip_panel")]
+[node name="Buttons" type="Panel" parent="." unique_id=727471108 node_paths=PackedStringArray("buttons", "simple_panel", "advanced_panel")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -588,8 +589,19 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_035wj")
 script = ExtResource("6_oyxrp")
 buttons = [NodePath("RButtons/Round/VBoxContainer/Shop"), NodePath("RButtons/Round/VBoxContainer/Party"), NodePath("RButtons/Round/VBoxContainer/Settings"), NodePath("LButtons/Round/VBoxContainer/HealTowers"), NodePath("LButtons/Round/VBoxContainer/Timeout")]
-tooltip_texts = Array[String](["Shop (B)", "Party (P)", "Settings (Esc)", "Heal Tower", "Time Out"])
-tooltip_panel = NodePath("Tooltip")
+tooltip_types = Array[int]([0, 0, 0, 1, 1])
+tooltip_sides = Array[int]([0, 0, 0, 1, 1])
+simple_texts = Array[String](["Shop (B)", "Party (P)", "Settings (Esc)"])
+adv_names = Array[String](["Heal Towers", "Timeout"])
+adv_types = Array[String](["Spell", "Untility"])
+adv_descs = Array[String](["Heals your towers over time in an area of effect.", "Prevent zombies from spawning for one day-night cycle."])
+adv_costs = Array[String](["1000 gold", "10 000 gold"])
+simple_panel = NodePath("Simple")
+advanced_panel = NodePath("Advanced")
+adv_name_path = "MarginContainer/VBox/Name"
+adv_type_path = "MarginContainer/VBox/Type"
+adv_desc_path = "MarginContainer/VBox/Desc"
+adv_cost_path = "MarginContainer/VBox/Cost"
 
 [node name="RButtons" type="Panel" parent="Buttons" unique_id=1805521970]
 layout_mode = 1
@@ -831,6 +843,10 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_k6q4f")
 
-[node name="Tooltip" parent="Buttons" unique_id=1447388443 instance=ExtResource("12_035wj")]
+[node name="Simple" parent="Buttons" unique_id=1447388443 instance=ExtResource("12_035wj")]
+visible = false
+layout_mode = 0
+
+[node name="Advanced" parent="Buttons" unique_id=1890202585 instance=ExtResource("13_kkfot")]
 visible = false
 layout_mode = 0

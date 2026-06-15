@@ -9,7 +9,7 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dicn"]
 
-[node name="Tooltip" type="PanelContainer" unique_id=1447388443]
+[node name="Simple" type="PanelContainer" unique_id=1447388443]
 size_flags_vertical = 6
 theme_override_styles/panel = SubResource("StyleBoxFlat_pvr4a")
 
