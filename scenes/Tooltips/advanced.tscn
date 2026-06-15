@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cpoemx0wli0xj"]
 
+[ext_resource type="Texture2D" uid="uid://bgo6v8vgc7e40" path="res://assets/UI/TooltipArrow.png" id="1_8ul1f"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvr4a"]
 bg_color = Color(0, 0, 0, 0.47058824)
 corner_radius_top_left = 3
@@ -9,6 +11,10 @@ corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dicn"]
 expand_margin_left = 985.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crbrv"]
+texture = ExtResource("1_8ul1f")
+modulate_color = Color(0, 0, 0, 0.47058824)
 
 [node name="Advanced" type="PanelContainer" unique_id=1447388443]
 offset_right = 250.0
@@ -54,3 +60,19 @@ theme_override_colors/font_color = Color(0.6862745, 0.29803923, 0.21960784, 1)
 theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
 text = "10 000 gold"
+
+[node name="ArrowAnchor" type="Control" parent="." unique_id=756152662]
+layout_mode = 2
+
+[node name="Arrow" type="Panel" parent="ArrowAnchor" unique_id=1449073302]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -2.5
+offset_bottom = 2.5
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_crbrv")
