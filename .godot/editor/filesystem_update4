@@ -1,6 +1,2 @@
-res://scenes/Player/HUD.tscn
+res://scenes/main.tscn
 res://scenes/scroll.gdshader
-res://scenes/Player/HoverButtons.gd
-res://scenes/Tooltips/simple.tscn
-res://scenes/Tooltips/advanced.tscn
-res://scenes/Tooltips/simple.gd

@@ -1,5 +1,10 @@
 extends PanelContainer
 
-# Ta funkcja wykonuje się automatycznie w każdej klatce gry
+func _ready() -> void:
+	# Ustawiamy wysoki priorytet. Dzięki temu ten skrypt wykona się PO tym,
+	# jak skrypt-manager z innej sceny ustawi pozycję chmurki.
+	process_priority = 100
+
 func _process(_delta: float) -> void:
-	global_position = get_global_mouse_position()
+	# Teraz na pewno zaokrąglamy pozycję jako ostatni!
+	global_position = global_position.round()
