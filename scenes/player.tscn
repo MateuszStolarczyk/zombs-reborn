@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://bexwi4c18ievu"]
+
+[ext_resource type="Script" uid="uid://b5klrb5a1nok2" path="res://scenes/player.gd" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cpafjne0dkipt" path="res://assets/svg/player-pickaxe-t1.svg" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://d4h742u8yl1wi" path="res://assets/svg/player-base.svg" id="3_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://2djdtddapeif" path="res://scenes/Player/HUD.tscn" id="4_fjrip"]
+[ext_resource type="Script" uid="uid://c8hcj16q4op8v" path="res://scripts/stats.gd" id="5_qlg0r"]
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tbgi4"]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.980875, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tefeu"]
+_data = {
+&"RESET": SubResource("Animation_jyhfs"),
+&"attack": SubResource("Animation_tbgi4")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
+radius = 25.0
+
+[sub_resource type="Animation" id="Animation_eb6dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.45685214, 0.4568522, 0.4568522, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_trceg"]
+resource_name = "night"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0010560371),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.45685214, 0.4568522, 0.4568522, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8y0u"]
+_data = {
+&"RESET": SubResource("Animation_eb6dy"),
+&"night": SubResource("Animation_trceg")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=425602291]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_dqkch")
+speed = 200.0
+
+[node name="HandPivot" type="Node2D" parent="." unique_id=1655070477]
+
+[node name="SecondPivot" type="Node2D" parent="HandPivot" unique_id=335872035]
+
+[node name="Hands" type="Sprite2D" parent="HandPivot/SecondPivot" unique_id=1237553662]
+position = Vector2(35, 0)
+rotation = 1.5707964
+texture = ExtResource("2_qlg0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HandPivot/SecondPivot/Hands" unique_id=1255041395]
+libraries/ = SubResource("AnimationLibrary_tefeu")
+
+[node name="Ray1" type="RayCast2D" parent="HandPivot" unique_id=46974309]
+target_position = Vector2(64, 0)
+
+[node name="Ray2" type="RayCast2D" parent="HandPivot" unique_id=1507693871]
+target_position = Vector2(64, 32)
+
+[node name="Ray3" type="RayCast2D" parent="HandPivot" unique_id=552650493]
+target_position = Vector2(64, -32)
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=19784921]
+texture = ExtResource("3_tuyoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049376430]
+shape = SubResource("CircleShape2D_o6xl0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1491992343]
+enabled = false
+
+[node name="Night" type="CanvasModulate" parent="Camera2D" unique_id=939501509]
+color = Color(0.45685214, 0.4568522, 0.4568522, 1)
+
+[node name="anim_night" type="AnimationPlayer" parent="Camera2D/Night" unique_id=1653793520]
+libraries/ = SubResource("AnimationLibrary_a8y0u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1148031049]
+
+[node name="HUD" parent="CanvasLayer" unique_id=107009146 instance=ExtResource("4_fjrip")]
+
+[node name="Stats" type="Node" parent="." unique_id=124284592]
+script = ExtResource("5_qlg0r")

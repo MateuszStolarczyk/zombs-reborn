@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://didsy7pdqyhdf" path="res://assets/ui-time-bar.png" id="2_dlxs6"]
 [ext_resource type="Texture2D" uid="uid://b4kb3qdy1dxdo" path="res://assets/UI/TimeCenter.png" id="3_dlxs6"]
 [ext_resource type="FontFile" uid="uid://d0ufpfoas37qw" path="res://assets/UI/font/SalmaproMediumNarrow.otf" id="4_ae8an"]
+[ext_resource type="Script" uid="uid://6h0muxcybxx" path="res://scenes/Player/statsDisplay.gd" id="6_5v57q"]
 [ext_resource type="Texture2D" uid="uid://bkbj727ckf321" path="res://assets/svg/icons-shop.svg" id="6_o5w4u"]
 [ext_resource type="Script" uid="uid://dmpbpom0oxfce" path="res://scenes/Player/HoverButtons.gd" id="6_oyxrp"]
 [ext_resource type="Texture2D" uid="uid://b1kd7vu8ndlia" path="res://assets/svg/icons-party.svg" id="7_oyxrp"]
@@ -315,6 +316,7 @@ offset_bottom = -49.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_t0sg8")
+script = ExtResource("6_5v57q")
 
 [node name="Round" type="Panel" parent="Stats" unique_id=237706890]
 clip_children = 1
@@ -589,9 +591,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_035wj")
 script = ExtResource("6_oyxrp")
 buttons = [NodePath("RButtons/Round/VBoxContainer/Shop"), NodePath("RButtons/Round/VBoxContainer/Party"), NodePath("RButtons/Round/VBoxContainer/Settings"), NodePath("LButtons/Round/VBoxContainer/HealTowers"), NodePath("LButtons/Round/VBoxContainer/Timeout")]
-tooltip_types = Array[int]([0, 0, 0, 1, 1])
 tooltip_sides = Array[int]([0, 0, 0, 1, 1])
-simple_texts = Array[String](["Shop (B)", "Party (P)", "Settings (Esc)"])
+simple_texts = Array[String](["Shop", "Party", "Settings"])
+simple_shortcuts = Array[String](["B", "P", "Esc"])
 adv_names = Array[String](["Heal Towers", "Timeout"])
 adv_types = Array[String](["Spell", "Untility"])
 adv_descs = Array[String](["Heals your towers over time in an area of effect.", "Prevent zombies from spawning for one day-night cycle."])

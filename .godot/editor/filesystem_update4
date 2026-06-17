@@ -1,4 +1,3 @@
+res://scenes/Player/statsDisplay.gd
 res://scenes/main.tscn
 res://scenes/scroll.gdshader
-res://scenes/Tooltips/simple.tscn
-res://scenes/Tooltips/simple.gd

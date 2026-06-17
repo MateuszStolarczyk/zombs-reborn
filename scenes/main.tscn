@@ -2,15 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c2pnrcntrgcwf" path="res://assets/map-grass.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://caluytmdre6pv" path="res://scenes/main.gd" id="1_tipki"]
-[ext_resource type="Script" uid="uid://b5klrb5a1nok2" path="res://scenes/player.gd" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://d3mhgdak80fof" path="res://assets/png/map-stone.png" id="3_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://cpafjne0dkipt" path="res://assets/svg/player-pickaxe-t1.svg" id="3_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://d4h742u8yl1wi" path="res://assets/svg/player-base.svg" id="4_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cynhyru83c6x6" path="res://assets/png/map-tree.png" id="4_trceg"]
 [ext_resource type="Script" uid="uid://baeg4872wgqu3" path="res://scenes/props_generarion.gd" id="6_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://d33kx523otmv0" path="res://assets/svg/map-tree.svg" id="7_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://tuluwujto4e1" path="res://assets/svg/map-stone.svg" id="8_jkv2x"]
-[ext_resource type="PackedScene" uid="uid://2djdtddapeif" path="res://scenes/Player/HUD.tscn" id="11_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://bexwi4c18ievu" path="res://scenes/player.tscn" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
 texture = ExtResource("1_o5qli")
@@ -36,106 +33,6 @@ sources/0 = SubResource("TileSetAtlasSource_choun")
 sources/4 = SubResource("TileSetAtlasSource_jkv2x")
 sources/5 = SubResource("TileSetAtlasSource_jbj1t")
 
-[sub_resource type="Animation" id="Animation_jyhfs"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_tbgi4"]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, -0.980875, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tefeu"]
-_data = {
-&"RESET": SubResource("Animation_jyhfs"),
-&"attack": SubResource("Animation_tbgi4")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_o6xl0"]
-radius = 25.0
-
-[sub_resource type="Animation" id="Animation_eb6dy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.45685214, 0.4568522, 0.4568522, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_trceg"]
-resource_name = "night"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0010560371),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.45685214, 0.4568522, 0.4568522, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8y0u"]
-_data = {
-&"RESET": SubResource("Animation_eb6dy"),
-&"night": SubResource("Animation_trceg")
-}
-
 [node name="Main" type="Node2D" unique_id=1715048030]
 script = ExtResource("1_tipki")
 day_time = 60.0
@@ -144,42 +41,13 @@ day_time = 60.0
 scale = Vector2(0.2, 0.2)
 tile_set = SubResource("TileSet_ya4ey")
 script = ExtResource("6_a8y0u")
+map_size = 600
+max_trees = 3200
+max_stones = 450
+global_spacing_score = 100
+max_overlapping_pairs = 1000
 tree_texture = ExtResource("7_a8y0u")
 stone_texture = ExtResource("8_jkv2x")
 max_offset = 0.6
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=2130166193]
-scale = Vector2(0.5, 0.5)
-script = ExtResource("2_jyhfs")
-speed = 200.0
-
-[node name="HandPivot" type="Node2D" parent="Player" unique_id=1891961540]
-
-[node name="SecondPivot" type="Node2D" parent="Player/HandPivot" unique_id=756492352]
-
-[node name="Hands" type="Sprite2D" parent="Player/HandPivot/SecondPivot" unique_id=717315606]
-position = Vector2(35, 0)
-rotation = 1.5707964
-texture = ExtResource("3_tbgi4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/HandPivot/SecondPivot/Hands" unique_id=523678403]
-libraries/ = SubResource("AnimationLibrary_tefeu")
-
-[node name="BodySprite" type="Sprite2D" parent="Player" unique_id=1547757727]
-texture = ExtResource("4_tefeu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1651102756]
-shape = SubResource("CircleShape2D_o6xl0")
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1965013540]
-enabled = false
-
-[node name="Night" type="CanvasModulate" parent="Player/Camera2D" unique_id=1210512717]
-color = Color(0.45685214, 0.4568522, 0.4568522, 1)
-
-[node name="anim_night" type="AnimationPlayer" parent="Player/Camera2D/Night" unique_id=456408636]
-libraries/ = SubResource("AnimationLibrary_a8y0u")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1911703972]
-
-[node name="HUD" parent="Player/CanvasLayer" unique_id=107009146 instance=ExtResource("11_a8y0u")]
+[node name="Player" parent="." unique_id=425602291 instance=ExtResource("8_tipki")]

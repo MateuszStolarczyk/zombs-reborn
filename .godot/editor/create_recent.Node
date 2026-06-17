@@ -1,3 +1,6 @@
+Node
+RayCast2D
+HBoxContainer
 Control
 Panel
 VBoxContainer
@@ -5,10 +8,8 @@ Label
 MarginContainer
 PanelContainer
 Button
-HBoxContainer
 ColorRect
 TextureRect
 CanvasLayer
 TileMapLayer
 TileMap
-Area2D
