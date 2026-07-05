@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ci4j5134jckps"]
+
+[ext_resource type="Texture2D" uid="uid://cjvy7cr30symr" path="res://assets/buldings_t1.png" id="1_jvh6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awo0t"]
+size = Vector2(32, 32)
+
+[node name="BombTowerT1" type="StaticBody2D" unique_id=295282529]
+scale = Vector2(3, 3)
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1166926427]
+texture_filter = 1
+texture = ExtResource("1_jvh6g")
+region_enabled = true
+region_rect = Rect2(0, 48, 32, 32)
+region_filter_clip_enabled = true
+
+[node name="Head" type="Sprite2D" parent="." unique_id=356390903]
+texture_filter = 1
+texture = ExtResource("1_jvh6g")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 16)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1263972847]
+shape = SubResource("RectangleShape2D_awo0t")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=96851926]

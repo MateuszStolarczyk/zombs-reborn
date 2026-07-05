@@ -1,53 +1,38 @@
 [gd_scene format=3 uid="uid://m0vqgjod7owi"]
 
-[ext_resource type="Texture2D" uid="uid://c2pnrcntrgcwf" path="res://assets/map-grass.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://caluytmdre6pv" path="res://scenes/main.gd" id="1_tipki"]
-[ext_resource type="Texture2D" uid="uid://d3mhgdak80fof" path="res://assets/png/map-stone.png" id="3_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://cynhyru83c6x6" path="res://assets/png/map-tree.png" id="4_trceg"]
+[ext_resource type="Texture2D" uid="uid://cghx0g3tu6ebx" path="res://assets/map.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://7bogoeta4uil" path="res://assets/map-tree.png" id="4_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://c8gbvj33jhkgo" path="res://assets/map-stone.png" id="5_tipki"]
 [ext_resource type="Script" uid="uid://baeg4872wgqu3" path="res://scenes/props_generarion.gd" id="6_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://d33kx523otmv0" path="res://assets/svg/map-tree.svg" id="7_a8y0u"]
-[ext_resource type="Texture2D" uid="uid://tuluwujto4e1" path="res://assets/svg/map-stone.svg" id="8_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bexwi4c18ievu" path="res://scenes/player.tscn" id="8_tipki"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
-texture = ExtResource("1_o5qli")
-texture_region_size = Vector2i(128, 128)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
+texture = ExtResource("2_tefeu")
 0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkv2x"]
-texture = ExtResource("3_eb6dy")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -26.353798, -11.712799, -64, 64, -21.473465, 34.16234, 52.70761, 16.593124, 64, -25.377731, 64)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbj1t"]
-texture = ExtResource("4_trceg")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.234138, -64, 31.23413, -64, 64, -21.473465, 64, 35.138397, 38.066605, 64, -34.16234, 64, -64, 27.329865, -64, -27.329865)
+1:0/0 = 0
+2:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ya4ey"]
-tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_choun")
-sources/4 = SubResource("TileSetAtlasSource_jkv2x")
-sources/5 = SubResource("TileSetAtlasSource_jbj1t")
+sources/0 = SubResource("TileSetAtlasSource_o6xl0")
 
 [node name="Main" type="Node2D" unique_id=1715048030]
 script = ExtResource("1_tipki")
 day_time = 60.0
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=46925627]
-scale = Vector2(0.2, 0.2)
+texture_filter = 1
+scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_ya4ey")
 script = ExtResource("6_a8y0u")
 map_size = 600
-max_trees = 3200
-max_stones = 450
-global_spacing_score = 100
-max_overlapping_pairs = 1000
-tree_texture = ExtResource("7_a8y0u")
-stone_texture = ExtResource("8_jkv2x")
+max_trees = 1600
+max_stones = 1000
+max_overlapping_pairs = 100
+tree_texture = ExtResource("4_o6xl0")
+stone_texture = ExtResource("5_tipki")
 max_offset = 0.6
 
 [node name="Player" parent="." unique_id=425602291 instance=ExtResource("8_tipki")]
+scale = Vector2(1.15, 1.15)

@@ -30,9 +30,14 @@ func _ready() -> void:
 	var half_size: int = int(map_size / 2)
 
 	# TŁO
+	# Definiujemy pozycje 3 kafelków trawy w atlasie (rząd 0, kolumny 0, 1, 2)
+	var grass_variants: Array[Vector2i] = [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
+	
 	for x in range(-half_size, half_size):
 		for y in range(-half_size, half_size):
-			set_cell(Vector2i(x, y), source_id, Vector2i(0, 0))
+			# Losujemy jeden z trzech kafelków
+			var random_grass = grass_variants.pick_random()
+			set_cell(Vector2i(x, y), source_id, random_grass)
 
 	# DRZEWA
 	while placed_trees < max_trees:

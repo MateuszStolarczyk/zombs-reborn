@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var stats = $Stats
+@onready var stats: Node = $Stats
 
 @export var speed: float = 300.0
 
@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var second_pivot: Node2D = $HandPivot/SecondPivot
 @onready var camera: Camera2D = $Camera2D
 @onready var anim_player: AnimationPlayer = $HandPivot/SecondPivot/Hands/AnimationPlayer
+@onready var body_sprite: Sprite2D = $BodySprite
 
 @onready var ray_1: RayCast2D = $HandPivot/Ray1
 @onready var ray_2: RayCast2D = $HandPivot/Ray2
@@ -44,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	hand_pivot.look_at(get_global_mouse_position())
+	body_sprite.look_at(get_global_mouse_position())
+
 
 
 func attack():

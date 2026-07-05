@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://baot25x2566e1"]
+
+[ext_resource type="Texture2D" uid="uid://cjvy7cr30symr" path="res://assets/buldings_t1.png" id="2_8imh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rmkr"]
+size = Vector2(32, 32)
+
+[node name="MeeleTowerT1" type="StaticBody2D" unique_id=295282529]
+scale = Vector2(3, 3)
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=531368853]
+texture_filter = 1
+texture = ExtResource("2_8imh4")
+region_enabled = true
+region_rect = Rect2(0, 16, 32, 32)
+
+[node name="Spikes" type="Sprite2D" parent="." unique_id=281665646]
+texture_filter = 1
+position = Vector2(5, 0)
+texture = ExtResource("2_8imh4")
+region_enabled = true
+region_rect = Rect2(64, 144, 32, 32)
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1166926427]
+texture_filter = 1
+texture = ExtResource("2_8imh4")
+region_enabled = true
+region_rect = Rect2(32, 144, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962131450]
+shape = SubResource("RectangleShape2D_3rmkr")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1285730623]

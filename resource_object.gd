@@ -30,13 +30,13 @@ func hit(from_position: Vector2) -> void:
 	# kierunek OD gracza
 	var dir: Vector2 = (global_position - from_position).normalized()
 
-	var strength: float = 25.0
+	var strength: float = 10.0
 	var target: Vector2 = original_visual_pos + dir * strength
 
 	var tween := create_tween()
 
 	# 🔥 RUSZAMY TYLKO WIZUAL
-	tween.tween_property(visual, "position", target, 0.06)
+	tween.tween_property(visual, "position", target, 0.08)
 	tween.tween_property(visual, "position", original_visual_pos, 0.10)
 
 	await tween.finished

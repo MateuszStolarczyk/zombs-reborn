@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bexwi4c18ievu"]
 
 [ext_resource type="Script" uid="uid://b5klrb5a1nok2" path="res://scenes/player.gd" id="1_dqkch"]
-[ext_resource type="Texture2D" uid="uid://cpafjne0dkipt" path="res://assets/svg/player-pickaxe-t1.svg" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://d4h742u8yl1wi" path="res://assets/svg/player-base.svg" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://b2e5daj8f4dro" path="res://assets/player.png" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cepblosr5nwx6" path="res://assets/player/hammer-t1.png" id="2_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://cwg6ue37gnxln" path="res://assets/player/hand.png" id="3_fjrip"]
 [ext_resource type="PackedScene" uid="uid://2djdtddapeif" path="res://scenes/Player/HUD.tscn" id="4_fjrip"]
 [ext_resource type="Script" uid="uid://c8hcj16q4op8v" path="res://scripts/stats.gd" id="5_qlg0r"]
 
@@ -107,7 +108,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=425602291]
-scale = Vector2(0.5, 0.5)
 script = ExtResource("1_dqkch")
 speed = 200.0
 
@@ -118,10 +118,27 @@ speed = 200.0
 [node name="Hands" type="Sprite2D" parent="HandPivot/SecondPivot" unique_id=1237553662]
 position = Vector2(35, 0)
 rotation = 1.5707964
-texture = ExtResource("2_qlg0r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="HandPivot/SecondPivot/Hands" unique_id=1255041395]
 libraries/ = SubResource("AnimationLibrary_tefeu")
+
+[node name="Weapon" type="Sprite2D" parent="HandPivot/SecondPivot/Hands" unique_id=2046797384]
+texture_filter = 1
+position = Vector2(3.0000002, 9)
+scale = Vector2(2, 2)
+texture = ExtResource("2_tuyoq")
+
+[node name="Hand1" type="Sprite2D" parent="HandPivot/SecondPivot/Hands" unique_id=972681173]
+texture_filter = 1
+position = Vector2(-14, 11)
+scale = Vector2(2, 2)
+texture = ExtResource("3_fjrip")
+
+[node name="Hand2" type="Sprite2D" parent="HandPivot/SecondPivot/Hands" unique_id=1270113892]
+texture_filter = 1
+position = Vector2(14, 11)
+scale = Vector2(2, 2)
+texture = ExtResource("3_fjrip")
 
 [node name="Ray1" type="RayCast2D" parent="HandPivot" unique_id=46974309]
 target_position = Vector2(64, 0)
@@ -133,7 +150,9 @@ target_position = Vector2(64, 32)
 target_position = Vector2(64, -32)
 
 [node name="BodySprite" type="Sprite2D" parent="." unique_id=19784921]
-texture = ExtResource("3_tuyoq")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049376430]
 shape = SubResource("CircleShape2D_o6xl0")
