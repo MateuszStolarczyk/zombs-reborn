@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7bogoeta4uil" path="res://assets/map-tree.png" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://c8gbvj33jhkgo" path="res://assets/map-stone.png" id="5_tipki"]
 [ext_resource type="Script" uid="uid://baeg4872wgqu3" path="res://scenes/props_generarion.gd" id="6_a8y0u"]
+[ext_resource type="Script" uid="uid://jej4bfs0rrwp" path="res://scenes/buldings_countainer.gd" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bexwi4c18ievu" path="res://scenes/player.tscn" id="8_tipki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6xl0"]
@@ -33,6 +34,9 @@ max_overlapping_pairs = 100
 tree_texture = ExtResource("4_o6xl0")
 stone_texture = ExtResource("5_tipki")
 max_offset = 0.6
+
+[node name="BuldingsCountainer" type="Node2D" parent="." unique_id=838093487]
+script = ExtResource("6_o6xl0")
 
 [node name="Player" parent="." unique_id=425602291 instance=ExtResource("8_tipki")]
 scale = Vector2(1.15, 1.15)

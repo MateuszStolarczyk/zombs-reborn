@@ -1,38 +1,29 @@
 [gd_scene format=3 uid="uid://bsfl44hf41orb"]
 
-[ext_resource type="Texture2D" uid="uid://bgo6v8vgc7e40" path="res://assets/UI/TooltipArrow.png" id="1_is680"]
+[ext_resource type="Texture2D" uid="uid://c0j8nyr4pp733" path="res://assets/UI/tooltip-right.png" id="1_is680"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvr4a"]
-bg_color = Color(0, 0, 0, 0.47058824)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 6
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojxyv"]
+texture = ExtResource("1_is680")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 16.0
+texture_margin_bottom = 9.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7dicn"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crbrv"]
-texture = ExtResource("1_is680")
-modulate_color = Color(0, 0, 0, 0.47058824)
-
 [node name="Simple" type="PanelContainer" unique_id=1447388443]
 size_flags_vertical = 6
-theme_override_styles/panel = SubResource("StyleBoxFlat_pvr4a")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ojxyv")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=215074776]
 layout_mode = 2
-theme_override_constants/margin_left = 3
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 3
-theme_override_constants/margin_bottom = 3
 
 [node name="HBox" type="HBoxContainer" parent="MarginContainer" unique_id=1170632030]
 layout_mode = 2
 
 [node name="Name" type="Label" parent="MarginContainer/HBox" unique_id=1868282675]
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
 text = "Shop"
 
@@ -41,29 +32,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.6666667, 0.68235296, 0.65882355, 1)
 theme_override_colors/font_outline_color = Color(0.6666667, 0.68235296, 0.65882355, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxTexture_7dicn")
 text = "(B)"
-
-[node name="ArrowAnchor" type="Control" parent="." unique_id=2016403043]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-
-[node name="Arrow" type="Panel" parent="ArrowAnchor" unique_id=1541020069]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 5.0
-offset_top = -2.0
-offset_right = 10.0
-offset_bottom = 3.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(-1, 1)
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxTexture_crbrv")
