@@ -1,5 +1,9 @@
 <div align="center">
-  <h1>ZomBase</h1>
+  <h1>
+    <a href="#"><img src="assets/favicon.png" width="30" alt=""></a> 
+    ZomBase 
+    <a href="#"><img src="assets/favicon.png" width="30" alt=""></a>
+  </h1>
   <p>Bringing back the legendary Zombs.io with a fresh pixel-art style and classic survival mechanics!</p>
 
   <!-- Buttons -->
@@ -24,7 +28,7 @@ This project **will resurrect** the core gameplay of the legendary **Zombs.io**.
 - [ ] Expanded Game Modes (PvP, destroying bases, up to 5-player teams)
 
 ### 🎮 Initial Release Features
-* **Classic Survival:** You **will be able to** build your ultimate base, defend your gold mines, and survive increasingly difficult nightly zombie waves.
+* **Classic Survival:** You **will be able to** build your ultimate base, defend your ***Gold Stash**, and survive increasingly difficult nightly zombie waves.
 * **LAN Local Co-op:** You **will be able to** team up with your friends locally over LAN to survive together. *(Note: Online remote multiplayer will not be supported initially, but is planned for the future).*
 
 ### 🚀 Future Roadmap
@@ -49,7 +53,7 @@ Gra **będzie miała na celu** przywrócenie do życia kultowego **Zombs.io**. Z
 - [ ] Rozbudowane tryby gry (PvP z niszczeniem baz, 5-osobowe drużyny)
 
 ### 🎮 Funkcje pierwszych wersji
-* **Klasyczny Survival:** **Będziesz mógł** budować bazę, bronić kopalni złota i przetrwać coraz trudniejsze, nocne fale zombie.
+* **Klasyczny Survival:** **Będziesz mógł** budować bazę, bronić **Rdzeń Bazy** i przetrwać coraz trudniejsze, nocne fale zombie.
 * **Lokalna kooperacja (LAN):** **Będziesz mógł** grać ze znajomymi w sieci lokalnej LAN, aby wspólnie walczyć o przetrwanie. *(Uwaga: Zdalny sieciowy multiplayer nie będzie dostępny na samym początku, ale jest w planach na przyszłość).*
 
 ### 🚀 Plany na przyszłość
@@ -62,4 +66,7 @@ W pierwszych wersjach gra **będzie** typowym survivalem, jednak w przyszłości
 
 <div align="center">
   <sub><strong>Disclaimer / Oświadczenie:</strong> This project is a fan-made revival aimed at bringing the game back to life. It is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the original Zombs.io or its creators. | Ten projekt to fanowski revival mający na celu ożywienie gry. Nie jest w żaden sposób powiązany, autoryzowany, wspierany ani oficjalnie połączony z oryginalną grą Zombs.io ani jej twórcami.</sub>
+</div>
+<div align="center">
+  <sub>Built with ❤️ and pure passion</sub>
 </div>
